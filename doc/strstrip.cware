@@ -1,0 +1,74 @@
+.TH "strstrip" "cware" "April 2nd, 2022" "" "C-Ware Manual"
+
+.SH NAME
+strstrip - strip characters from a string in-place
+
+.SH SYNOPSIS
+.B #include <cware/libstring/libstring.h>
+
+.BI "int strstrip(char *" "string" ", const char *" "characters" ");"
+
+.SH DESCRIPTION
+The
+.B strstrip
+function will remove characters within its
+.I characters
+argument from
+.I string
+in-place. This means that the function does not allocate any extra space during the
+removal of characters, and instead opts for shifting parts of the buffer around. A
+misconception about this function may be that it treats
+.I characters
+as a string to remove, when in reality those are just the characters that will be
+removed from the string. The final string will be NULL terminated.
+
+If the
+.I string
+or
+.I characters
+arguments are
+.BR NULL ,
+an error will be printed to the stderr, and the program will exit.
+
+.I string
+will be the string to remove characters from
+.br
+.I characters
+will be the characters to remove
+
+.SH RETURN VALUE
+This function returns the number of characters that were stripped.
+
+.SH EXAMPLES
+/*
+ * This example showcases how to use the
+.B strstrip
+function.
+.br
+*/
+
+#include <stdio.h>
+.br
+#include <string.h>
+.br
+#include <stdlib.h>
+.br
+#include <cware/libstring/libstring.h>
+.br
+
+int main(void) {
+    char string[256 + 1] = "foo bar baz";
+
+    printf("Stripped %i characters from string.\\n", strstrip(string, "fb"));
+    printf("%s\\n", string);
+
+    return EXIT_SUCCESS;
+.br
+}
+
+.SH CONFORMING TO
+This function conforms to C89.
+
+.SH SEE ALSO
+.BR cware (cware),
+.BR libstring (cware)

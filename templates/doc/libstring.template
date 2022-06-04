@@ -1,0 +1,67 @@
+.TH "libstring" "cware" "April 2nd, 2022" "" "C-Ware Manual"
+
+.SH NAME
+libstring - an extension to string.h
+
+.SH SYNOPSIS
+.B #include <stddef.h>
+.br
+.B #include <cware/libstring/libstring.h>
+
+.BI "char *strrev(char *" "string" ");"
+.br
+.BI "int strstrip(char *" "string" ", const char *" "characters" ");"
+.br
+.BI "int strcount(const char *" "string" ", const char *" "count" ");"
+.br
+.BI "int strstarts(const char *" "string" ", const char *" "start" ");"
+.br
+.BI "int strrepl(char *" "string" ", const char *" "find" ", const char *" "replace" ", size_t " "size" ");"
+
+.SH DESCRIPTION
+The
+.B libstring
+library provides an extension to the
+.BR string (3)
+library. It provides additional functions which operate on NUL terminated strings that
+the base string library does not provide. What follows is a table of each function that
+is exposed by the public headers, and where documentation can be found for it.
+
+.TS
+tab(;);
+lb lb
+_ _
+lb l
+lb l
+lb l
+lb l
+lb l
+.
+Manual;Description
+strrev(cware);reverse a string
+strstrip(cware);remove characters from a string
+strcount(cware);count occurrences of a sub string in a string
+strstarts(cware);determine if a string starts with a sub string
+strrepl(cware);find and replace in a string
+.TE
+
+.SH CONFORMING TO
+This library conforms to C89.
+
+.SH SUPPORTED PLATFORMS
+This library has been tested to work on:
+.IP \[bu] 3
+Arch Linux
+.IP \[bu] 3
+Linux Mint
+.IP \[bu] 3
+Debian
+.IP \[bu] 3
+FreeBSD 13.0
+.IP \[bu] 3
+OpenBSD 7.0
+.IP \[bu] 3
+Solaris 10
+
+.SH SEE ALSO
+.BR cware (cware)

@@ -1,0 +1,60 @@
+.TH "strrev" "cware" "April 2nd, 2022" "" "C-Ware Manual"
+
+.SH NAME
+strrev - reverses a string in-place
+
+.SH SYNOPSIS
+.B #include <cware/libstring/libstring.h>
+
+.BI "char *strrev(char *" "string" ");"
+
+.SH DESCRIPTION
+The
+.B strrev
+function will reverse a string in-place. This means that the function does not allocate
+any extra space during the reversing, and instead opts for shifting parts of the buffer
+around.
+
+When
+.I string
+is
+.BR NULL ,
+an error will be printed to the stderr, and the program will exit.
+
+.I string
+will be the string that will be reversed.
+
+.SH RETURN VALUE
+This function will return the string that was reversed.
+
+.SH EXAMPLES 
+/*
+ * This example showcases how to use the
+.B strrev
+function.
+.br
+*/
+
+#include <stdio.h>
+.br
+#include <stdlib.h>
+.br
+#include <cware/libstring/libstring.h>
+
+int main(void) {
+    char string[256 + 1] = "foo bar baz";
+
+    strrev(string); /* Reverse the string */
+    printf("%s\\n", string);
+    strrev(string); /* Put it back to normal */
+
+    return EXIT_SUCCESS;
+.br
+}
+
+.SH CONFORMING TO
+This function conforms to C89.
+
+.SH SEE ALSO
+.BR cware (cware),
+.BR libstring (cware)

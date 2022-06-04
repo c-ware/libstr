@@ -1,0 +1,50 @@
+This library seeks to be portable to a large number of operating systems. For
+this to happen, some operating systems require special compiler flags or
+otherwise. This contains installation instructions for all operating systems
+that libstring supports.
+
+REQUIREMENTS:
+- Make command (BSD Make, GNU Make, System V UNIX Make are all tested to work)
+- Compiler that supports C89 minimum
+- libc (I have to specify this, unfortunately)
+
+Arch Linux Installation:
+$ make
+$ sudo make install
+
+Debian 11.2.0 Installation:
+Debian by default comes with no make or C compiler, so you will need to install
+them.
+
+$ sudo apt install gcc
+$ sudo apt install make
+
+Once those are installed,
+
+$ make
+$ sudo make install
+
+Linux Mint Installation:
+Linux mint has no libc installed by default (much to my disappointment), so it
+will need to be installed. To do this, run:
+
+$ sudo apt install libc6-dev
+
+Once that is installed, run
+
+$ make
+$ sudo make install
+
+OpenBSD, FreeBSD Installation (Run in a privileged mode):
+$ make
+$ make install
+
+System V UNIX Installation (Run in a privileged mode):
+$ make CC=gcc CFLAGS=-fpic
+$ make install
+
+Windows (Cygwin) Installation:
+Requires the gcc-core and make packages.
+
+$ make
+$ make install
