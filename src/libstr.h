@@ -35,44 +35,64 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#ifndef CWARE_LIBSTR_H
+#define CWARE_LIBSTR_H
+
 /*
- * Count the number of times a character appears in a string.
+ * Reverses a string in place.
+ *
+ * @param string: the string to reverse
+ * @return: the reversed string
 */
+char *strrev(char *string);
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+/*
+ * Removes characters from a string in place.
+ *
+ * @param string: the string to remove from
+ * @param characters: the characters to strip
+ * @return: the number of characters stripped
+*/
+int strstrip(char *string, const char *characters);
 
-#include "libstr.h"
+/*
+ * Counts the number of times a sub string appears in a
+ * string.
+ *
+ * @param string: the string to count in
+ * @param count: the sub string to count
+ * @return: the number of occurrences
+*/
+int strcount(const char *string, const char *count);
 
-int strcount(const char *string, const char *count) {
-    int index = 0;
-    int occurrences = 0;
+/*
+ * Replaces a string in a string with another
+ * string in place.
+ *
+ * @param string: the string to replace
+ * @param length: the maximum length of the buffer
+ * @param find: the string to replace
+ * @param replace: the string to replace with
+ * @return: number of replacements
+*/
+int strrepl(char *string, const char *find, const char *replace, size_t size);
 
-    /* Arguments cannot be NULL; will crash anyway. */
-    if(string == NULL) {
-        fprintf(stderr, "%s", "strcount: argument 1 cannot be NULL.\n");
-        exit(EXIT_FAILURE);
-    }
+/*
+ * Checks if a string starts with a sub string.
+ *
+ * @param string: the string to check
+ * @param start: the sub string to compare
+ * @return: 1 if string starts with the sub string, 0 if it does not
+*/
+int strstarts(const char *string, const char *start);
 
-    if(count == NULL) {
-        fprintf(stderr, "%s", "strcount: argument 2 cannot be NULL.\n");
-        exit(EXIT_FAILURE);
-    }
+/*
+ * C89 compliant semi-implementation of the snprintf function from C99.
+ *
+ * @param buffer: the buffer to write to
+ * @param length: the maximum length of the buffer
+ * @param format: the format string
+*/
+size_t ls_snprintf(char *buffer, size_t length, const char *format, ...);
 
-    /* Count will never appear in the string */
-    if(strlen(count) > strlen(string))
-        return 0;
-
-    for(index = 0; string[index] != '\0'; index++) {
-        if(string[index] != count[0])
-            continue;
-
-        if(strstarts(string + index, count) == 0)
-            continue;
-
-        occurrences++;
-    }
-
-    return occurrences;
-}
+#endif

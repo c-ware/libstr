@@ -2,7 +2,7 @@
 # Process all files with m4 and output them to their respective directories.
 
 # Process all manual pages
-for manual in ./templates/doc/*.template; do
+for manual in ./template/doc/*.template; do
     manual_name=`basename $manual | cut -d '.' -f 1`
     upper_manual_name=`echo $manual_name | tr '[a-z]' '[A-Z]'`
 
@@ -10,5 +10,5 @@ for manual in ./templates/doc/*.template; do
 done
 
 # Process the Makefile
-m4 ./templates/Makefile.template > ./Makefile
-m4 ./templates/Makefile.dos.template > ./Makefile.dos
+m4 ./template/Makefile > ./Makefile
+m4 ./template/Makefile.dos > ./Makefile.dos

@@ -5,10 +5,10 @@
 CC=cc
 PREFIX=/usr/local
 CFLAGS=
-OBJS=src/replace.o src/reverse.o src/starts.o src/strip.o src/count.o 
-TESTS=tests/test_snprintf.out tests/test_strstarts.out tests/test_strrev.out tests/test_strrepl.out tests/test_strcount.out tests/test_strstrip.out 
-DOCS=./doc/strstrip.cware ./doc/strstarts.cware ./doc/strrev.cware ./doc/strrepl.cware ./doc/strcount.cware ./doc/libstring.cware 
-MANNAMES=strstrip.cware strstarts.cware strrev.cware strrepl.cware strcount.cware libstring.cware 
+OBJS=src/starts.o src/replace.o src/strip.o src/reverse.o src/count.o 
+TESTS=tests/test_strrepl.out tests/test_strcount.out tests/test_strstarts.out tests/test_strrev.out tests/test_strstrip.out tests/test_snprintf.out 
+DOCS=./doc/strrev.cware ./doc/strstarts.cware ./doc/strrepl.cware ./doc/strcount.cware ./doc/strstrip.cware ./doc/libstring.cware 
+MANNAMES=strrev.cware strstarts.cware strrepl.cware strcount.cware strstrip.cware libstring.cware 
 DEBUGGER=
 
 all: $(OBJS) $(TESTS)
