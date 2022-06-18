@@ -1,10 +1,10 @@
-.TH "strrev" "cware" "April 2nd, 2022" "" "C-Ware Manual"
+.TH "strrev" "cware" "June 18th, 2022" "" "C-Ware Manual"
 
 .SH NAME
 strrev - reverses a string in-place
 
 .SH SYNOPSIS
-.B #include <cware/libstring/libstring.h>
+.B #include <cware/libstr/libstr.h>
 
 .BI "char *strrev(char *" "string" ");"
 
@@ -39,7 +39,7 @@ function.
 .br
 #include <stdlib.h>
 .br
-#include <cware/libstring/libstring.h>
+#include <cware/libstr/libstr.h>
 
 int main(void) {
     char string[256 + 1] = "foo bar baz";
@@ -57,4 +57,4 @@ This function conforms to C89.
 
 .SH SEE ALSO
 .BR cware (cware),
-.BR libstring (cware)
+.BR libstr (cware)

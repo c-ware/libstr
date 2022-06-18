@@ -1,10 +1,10 @@
-.TH "strstarts" "cware" "April 2nd, 2022" "" "C-Ware Manual"
+.TH "strstarts" "cware" "June 18th, 2022" "" "C-Ware Manual"
 
 .SH NAME
 strstarts - determine if a string is prefixed with a sub-string.
 
 .SH SYNOPSIS
-.B #include <cware/libstring/libstring.h>
+.B #include <cware/libstr/libstr.h>
 
 .BI "int strstarts(const char *" "string" ", const char *" "start" ");"
 
@@ -46,7 +46,7 @@ function.
 .br
 #include <stdlib.h>
 .br
-#include <cware/libstring/libstring,h>
+#include <cware/libstr/libstr,h>
 
 int main(void) {
     printf("'foo' starts with 'f': %i\\n", strstarts("foo", "f"));
@@ -62,4 +62,4 @@ This function conforms to C89.
 
 .SH SEE ALSO
 .BR cware (cware),
-.BR libstring (cware)
+.BR libstr (cware)

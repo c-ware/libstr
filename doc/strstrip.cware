@@ -1,10 +1,10 @@
-.TH "strstrip" "cware" "April 2nd, 2022" "" "C-Ware Manual"
+.TH "strstrip" "cware" "June 18th, 2022" "" "C-Ware Manual"
 
 .SH NAME
 strstrip - strip characters from a string in-place
 
 .SH SYNOPSIS
-.B #include <cware/libstring/libstring.h>
+.B #include <cware/libstr/libstr.h>
 
 .BI "int strstrip(char *" "string" ", const char *" "characters" ");"
 
@@ -53,7 +53,7 @@ function.
 .br
 #include <stdlib.h>
 .br
-#include <cware/libstring/libstring.h>
+#include <cware/libstr/libstr.h>
 .br
 
 int main(void) {
@@ -71,4 +71,4 @@ This function conforms to C89.
 
 .SH SEE ALSO
 .BR cware (cware),
-.BR libstring (cware)
+.BR libstr (cware)
