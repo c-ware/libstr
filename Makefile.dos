@@ -5,7 +5,7 @@
 CC=cl
 LINKER=link
 OBJS=src\starts.obj src\replace.obj src\strip.obj src\reverse.obj src\count.obj 
-TESTS=tests\test_strrepl.exe tests\test_strcount.exe tests\test_strstarts.exe tests\test_strrev.exe tests\test_strstrip.exe tests\test_snprintf.exe 
+TESTS=tests\test_strrepl.exe tests\test_strcount.exe tests\test_strstarts.exe tests\test_strrev.exe tests\test_strstrip.exe 
 
 .SUFFIXES: .c .exe .obj
 
